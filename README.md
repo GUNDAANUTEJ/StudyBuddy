@@ -1,1 +1,1 @@
-# GDP2-Group2-
+# StudyBuddy GDP2 01-02 
