@@ -5,6 +5,6 @@
 
 ## Group Organization
 ### Team Members
- * Gunda Sai Naga Anu Teja - S542408
- * Bala Shankar Malladi - S542419
- * Roopin Vipparthi - S542274
+ * [Gunda Sai Naga Anu Teja](https://github.com/GUNDAANUTEJ) - S542408
+ * [Bala Shankar Malladi] - S542419
+ * [Roopin Vipparthi] - S542274
