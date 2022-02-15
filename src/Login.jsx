@@ -26,3 +26,43 @@ const Login = () => {
                     email, password
                 })
             })
+
+
+            const data = await result.json();
+
+            if (data.success) {
+                window.alert(data.message)
+                window.location.reload()
+            } else {
+                window.alert(data.error)
+            }
+        }
+
+
+    }
+
+    return (
+        <>
+            <form method="post" className="login-form mb-2" onSubmit={validation}>
+                <h1 className="my-4 pb-2">Login</h1>
+                <div className="mb-3 mx-3">
+                    <label htmlFor="username" className="form-label">Username :</label>
+                    <input type="email" name="username" id="username" className="form-control" onChange={(event) => setEmail(event.target.value)} placeholder="enter your email" required />
+                </div>
+                <div className="mb-3 mx-3">
+                    <label htmlFor="password" className="form-label">Password :</label>
+                    <input type="password" name="password" id="password" className="form-control" onChange={(event) => setPass(event.target.value)} required />
+                    <div id="passwordHelp" className="form-text" style={{ fontSize: "13px" }}>Password must contain at least 8 characters.</div>
+                </div>
+                <div className="mb-3 mx-3">
+                    <button type="submit" className="btn btn-success fs-6 form-control">Submit</button>
+                </div>
+                <div className="text-center">
+                    <h6 className="text-white">New user ! <Link to="/signup" className="text-decoration-none">SignUp</Link></h6>
+                </div>
+            </form>
+        </>
+    )
+}
+
+export default Login
