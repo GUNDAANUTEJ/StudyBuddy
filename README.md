@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0a3d2456a7994058a5402499c3371d4c)](https://www.codacy.com/gh/GUNDAANUTEJ/StudyBuddy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GUNDAANUTEJ/StudyBuddy&amp;utm_campaign=Badge_Grade)
 
+Back-end github code, in this repository.
+
 ## Project: Study Buddy
 
 > We intend to build a tool that would be a solo place where students would be able to track the upcoming assignments, class tasks in an easy way . This tool allows students to even check for updates in the calendar about upcoming to-do lists, memo functionality. This tool will also provide the flexibility for the students to customize the look of the application based on their own choice of themes.
