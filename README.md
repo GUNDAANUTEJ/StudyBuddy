@@ -21,3 +21,5 @@ Stack we are using for application building.
 * Front-end page plan - The Front-end page plan would be single-page application (SPA) is a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of the default method of a web browser loading entire new pages. The goal is faster transitions that make the website feel more like a native app.
 * Front-end design - React.js.
 * Static analysis tools - Snyk.
+
+[Front-end Github Repository link](https://github.com/GUNDAANUTEJ/studybuddyfrontend)
