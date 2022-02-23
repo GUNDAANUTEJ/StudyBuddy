@@ -26,3 +26,5 @@ Stack we are using for application building.
 * Static analysis tools - Snyk.
 
 [Front-end Github Repository link](https://github.com/GUNDAANUTEJ/studybuddyfrontend)
+
+[Front-end Heroku deployment link](https://study-buddy-frontend.herokuapp.com/)
