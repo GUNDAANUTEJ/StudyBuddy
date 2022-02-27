@@ -28,3 +28,8 @@ Stack we are using for application building.
 [Front-end Github Repository link](https://github.com/GUNDAANUTEJ/studybuddyfrontend)
 
 [Front-end Heroku deployment link](https://study-buddy-frontend.herokuapp.com/)
+
+## how to run tests
+
+* Created tests folder and added example-tests.js file.
+* To run tests: used mocha command - npx mocha example-tests.js. 
