@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 const collection = require('./collection')
@@ -8,10 +9,13 @@ const jwt = require('jsonwebtoken')
 const course = require('./corse_collection')
 const multer = require('multer')
 const fs = require('fs')
+const cors = require('cors')
 const Authentication = require('./methods/authentication')
 let token;
 
+app.use(cors())
 app.use(cookieParser())
+app.use(bodyParser.json())
 app.use(express.json());
 app.use(
     express.urlencoded({
@@ -31,9 +35,12 @@ app.get('/auth', async (req, res) => {
         const verifyToken = jwt.verify(cookie, "BearcatStudyBuddyProject")
         const verifyUser = await collection.findOne({ _id: verifyToken._id, token: cookie })
         if (!verifyUser)
-            res.send(false)
+            res.json({ success: 0 })
         else
-            res.send(true)
+            res.json({ success: 1 })
+
+    } else {
+        res.json({ success: 0 })
     }
 })
 
@@ -137,6 +144,7 @@ const upload = multer({ storage: fileStorageEngine })
 
 app.post("/course", upload.single("file"), async (req, res) => {
     try {
+        console.log(req.file)
         const cookie = req.cookies.jwtToken;
         const verifyToken = jwt.verify(cookie, "BearcatStudyBuddyProject")
         const verifyUser = await collection.findOne({ _id: verifyToken._id, token: cookie })
