@@ -1,0 +1,35 @@
+[{
+    "img":"https://picsum.photos/200",
+    "prof":"Prof Jasvant R Dave",
+    "subject":"IPDC"
+},
+{
+    "img":"https://picsum.photos/200",
+    "prof":"Prof Chirag A Patel",
+    "subject":"Adv. Web devlopment"
+},
+{
+    "img":"https://picsum.photos/200",
+    "prof":"Prof Shailesh J Molia",
+    "subject":"DBMS"
+},
+{
+    "img":"https://picsum.photos/200",
+    "prof":"Prof Dhaval J Varia",
+    "subject":"Mobile Application Devlopement"
+},
+{
+    "img":"https://picsum.photos/200",
+    "prof":"Prof Chetna G Chand",
+    "subject":"Computer Oragnization & Architecture"
+},
+{
+    "img":"https://picsum.photos/200",
+    "prof":"Prof Nikunj c Gamit",
+    "subject":"IC"
+},
+{
+    "img":"https://picsum.photos/200",
+    "prof":"Prof Vibha D Patel",
+    "subject":"Data Science"
+}]
