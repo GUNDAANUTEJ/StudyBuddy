@@ -4,6 +4,7 @@
 
 Back-end github code, in this repository.
 
+[![CodeQL](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 [CodeQL link](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 
 ## Project: Study Buddy
