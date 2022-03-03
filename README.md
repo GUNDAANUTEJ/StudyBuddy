@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0a3d2456a7994058a5402499c3371d4c)](https://www.codacy.com/gh/GUNDAANUTEJ/StudyBuddy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GUNDAANUTEJ/StudyBuddy&amp;utm_campaign=Badge_Grade)
 
-Back-end github code, in this repository.
+### Back-end github code, in this repository.
 
 ### Snyk:  ![Screenshot (253)](https://user-images.githubusercontent.com/77635770/156491700-b7e27d57-75a6-4c93-bffb-37254bd4ff2e.png)
 
@@ -36,7 +36,6 @@ Stack we are using for application building.
 ## [Front-end Heroku deployment link](https://study-buddy-frontend.herokuapp.com/)
 
 ## [Back-end Heroku deployment link](https://study-buddy-bckend.herokuapp.com/)
-## This is back end github link
 
 ## how to run tests
 
