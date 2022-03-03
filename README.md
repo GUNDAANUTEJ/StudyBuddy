@@ -5,7 +5,8 @@
 ### [![CodeQL](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 ### [CodeQL link](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 
-### Snyk:  ![Screenshot (253)](https://user-images.githubusercontent.com/77635770/156491700-b7e27d57-75a6-4c93-bffb-37254bd4ff2e.png)
+### Snyk:  
+![Screenshot (256)](https://user-images.githubusercontent.com/77635770/156493541-696c21b5-c960-4437-994e-cec98a4d5ec9.png)
 
 ### Back-end github code, in this repository.
 
