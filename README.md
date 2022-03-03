@@ -29,9 +29,14 @@ Stack we are using for application building.
 * Front-end design - React.js.
 * Static analysis tools - Snyk.
 
-[Front-end Github Repository link](https://github.com/GUNDAANUTEJ/studybuddyfrontend)
+## Documentation site link : https://github.com/GUNDAANUTEJ/study-buddy-doc
 
-[Front-end Heroku deployment link](https://study-buddy-frontend.herokuapp.com/)
+## [Front-end Github Repository link](https://github.com/GUNDAANUTEJ/studybuddyfrontend)
+
+## [Front-end Heroku deployment link](https://study-buddy-frontend.herokuapp.com/)
+
+## [Back-end Heroku deployment link](https://study-buddy-bckend.herokuapp.com/)
+## This is back end github link
 
 ## how to run tests
 
