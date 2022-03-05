@@ -16,9 +16,9 @@
 
 ## Team Members
 
- * [Gunda Sai Naga Anu Teja](https://github.com/GUNDAANUTEJ) - S542408
- * [Bala Shankar Malladi](https://github.com/balumalladi) - S542419
- * [Roopin Vipparthi](https://github.com/RoopinVipparthi) - S542274
+ * [Gunda Sai Naga Anu Teja](https://github.com/GUNDAANUTEJ) - S542408    - Developer
+ * [Bala Shankar Malladi](https://github.com/balumalladi)    - S542419    - Developer
+ * [Roopin Vipparthi](https://github.com/RoopinVipparthi)    - S542274    - Tester
 
 ## External Requirments
 
