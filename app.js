@@ -29,20 +29,20 @@ mongoose.connect(uri).then(() => {
     console.log("connection successfull...")
 }).catch((err) => console.log("connection error : ", err))
 
-app.get('/auth', async (req, res) => {
-    if (typeof (req.cookies.jwtToken) !== "undefined") {
-        const cookie = req.cookies.jwtToken;
-        const verifyToken = jwt.verify(cookie, "BearcatStudyBuddyProject")
-        const verifyUser = await collection.findOne({ _id: verifyToken._id, token: cookie })
-        if (!verifyUser)
-            res.json({ success: 0 })
-        else
-            res.json({ success: 1 })
+// app.get('/auth', async (req, res) => {
+//     if (typeof (req.cookies.jwtToken) !== "undefined") {
+//         const cookie = req.cookies.jwtToken;
+//         const verifyToken = jwt.verify(cookie, "BearcatStudyBuddyProject")
+//         const verifyUser = await collection.findOne({ _id: verifyToken._id, token: cookie })
+//         if (!verifyUser)
+//             res.json({ success: 0 })
+//         else
+//             res.json({ success: 1 })
 
-    } else {
-        res.json({ success: 0 })
-    }
-})
+//     } else {
+//         res.json({ success: 0 })
+//     }
+// })
 
 app.get('/fetchData', Authentication, async (req, res) => {
     try {
