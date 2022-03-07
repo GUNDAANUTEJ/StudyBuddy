@@ -60,14 +60,14 @@ app.get('/fetchData', Authentication, async (req, res) => {
     }
 })
 
-app.get('/dashboard', Authentication, async (req, res) => {
-    try {
-        const user = req.user;
-        res.send(true)
-    } catch (err) {
-        console.log(err)
-    }
-})
+// app.get('/dashboard', Authentication, async (req, res) => {
+//     try {
+//         const user = req.user;
+//         res.send(true)
+//     } catch (err) {
+//         console.log(err)
+//     }
+// })
 
 app.post('/login', async (req, res) => {
     try {
