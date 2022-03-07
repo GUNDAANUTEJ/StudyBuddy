@@ -73,21 +73,26 @@ app.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         const result = await collection.findOne({ email: email })
-        const result1 = await bcrypt.compare(password, result.password)
-        if (result1) {
+        if (result) {
+            const result1 = await bcrypt.compare(password, result.password)
+            if (result1) {
 
-            // we are genrating token
-            token = jwt.sign({ _id: result._id }, "BearcatStudyBuddyProject");
-            result.token = token;
-            await result.save();
+                // we are genrating token
+                token = jwt.sign({ _id: result._id }, "BearcatStudyBuddyProject");
+                result.token = token;
+                await result.save();
 
-            res.cookie("jwtToken", token, {
-                expires: new Date(Date.now() + 172800000),
-                httpOnly: true
-            })
+                res.cookie("jwtToken", token, {
+                    expires: new Date(Date.now() + 172800000),
+                    httpOnly: true
+                })
 
-            res.json({ success: 1 })
-        } else {
+                res.json({ success: 1 })
+            } else {
+                res.json({ success: 0, error: "password or username is wrong" })
+            }
+        }
+        else{
             res.json({ success: 0, error: "password or username is wrong" })
         }
     } catch (err) {
