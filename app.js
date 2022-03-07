@@ -13,9 +13,7 @@ const cors = require('cors')
 const Authentication = require('./methods/authentication')
 let token;
 
-app.use(cors({
-    origin:"https://study-buddy-frontend.herokuapp.com"
-}))
+app.use(cors())
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(express.json());
