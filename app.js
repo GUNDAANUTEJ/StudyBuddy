@@ -26,7 +26,7 @@ app.use(
 const uri = "mongodb+srv://Denis:denis123@cluster0.iaxba.mongodb.net/study_buddy?retryWrites=true&w=majority";
 
 mongoose.connect(uri).then(() => {
-    console.log("connection successfull...")
+    console.log("connection successfull...!")
 }).catch((err) => console.log("connection error : ", err))
 
 app.post('/auth', async (req, res) => {
