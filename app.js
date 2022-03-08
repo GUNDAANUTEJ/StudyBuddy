@@ -87,7 +87,7 @@ app.post('/login', async (req, res) => {
                     httpOnly: true
                 })
 
-                res.json({ success: 1 })
+                res.json({ success: 1 ,token:token })
             } else {
                 res.json({ success: 0, error: "password or username is wrong" })
             }
