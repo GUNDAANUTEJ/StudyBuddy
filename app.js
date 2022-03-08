@@ -139,7 +139,7 @@ app.post("/course", upload.single("file"), async (req, res) => {
         console.log(filePath);
         const checkUser = await course.findOne({ email: verifyUser.email })
         if (checkUser) {
-            const result = await course.findOneAndUpdate({ email: email }, { path: filePath })
+            const result = await course.findOneAndUpdate({ email: verifyUser.email }, { path: filePath })
             await result.save()
         }
         else {
