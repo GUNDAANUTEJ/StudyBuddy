@@ -54,9 +54,9 @@ app.post('/fetchData', async (req, res) => {
         if (result) {
             const fileName = result.path;
             const Data = await fs.readFileSync(fileName, "utf-8")
-            res.json({success:1,data:Data})
+            res.send(Data)
         } else {
-            res.json({success:0})
+            res.send()
         }
     } catch (err) {
         console.log(err)
