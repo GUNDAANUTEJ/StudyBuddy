@@ -46,6 +46,23 @@ app.post('/auth', async (req, res) => {
     }
 })
 
+app.post('/getToken', async (req, res) => {
+    try {
+        let email = req.body.email;
+        let result = await collection.findOne({ email: email });
+        if (result) {
+            // we are genrating token
+            token = jwt.sign({ _id: result._id, email: result.email }, "BearcatStudyBuddyProject");
+            res.json({ success: 1, token: token })
+        }
+        else {
+            res.json({ success: 0, error: "email is wrong" })
+        }
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 app.post('/fetchData', async (req, res) => {
     try {
         const token = req.body.token;
