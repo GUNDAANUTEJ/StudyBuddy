@@ -2,9 +2,13 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0a3d2456a7994058a5402499c3371d4c)](https://www.codacy.com/gh/GUNDAANUTEJ/StudyBuddy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GUNDAANUTEJ/StudyBuddy&amp;utm_campaign=Badge_Grade)
 
-Back-end github code, in this repository.
+### [![CodeQL](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
+### [CodeQL link](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 
-[CodeQL link](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
+### Snyk:  
+![Screenshot (256)](https://user-images.githubusercontent.com/77635770/156493541-696c21b5-c960-4437-994e-cec98a4d5ec9.png)
+
+### Back-end github code, in this repository.
 
 ## Project: Study Buddy
 
@@ -12,9 +16,9 @@ Back-end github code, in this repository.
 
 ## Team Members
 
- * [Gunda Sai Naga Anu Teja](https://github.com/GUNDAANUTEJ) - S542408
- * [Bala Shankar Malladi](https://github.com/balumalladi) - S542419
- * [Roopin Vipparthi](https://github.com/RoopinVipparthi) - S542274
+ * [Gunda Sai Naga Anu Teja](https://github.com/GUNDAANUTEJ) - S542408    - Developer
+ * [Bala Shankar Malladi](https://github.com/balumalladi)    - S542419    - Developer
+ * [Roopin Vipparthi](https://github.com/RoopinVipparthi)    - S542274    - Tester
 
 ## External Requirments
 
@@ -25,9 +29,13 @@ Stack we are using for application building.
 * Front-end design - React.js.
 * Static analysis tools - Snyk.
 
-[Front-end Github Repository link](https://github.com/GUNDAANUTEJ/studybuddyfrontend)
+## Documentation site link : https://github.com/GUNDAANUTEJ/study-buddy-doc
 
-[Front-end Heroku deployment link](https://study-buddy-frontend.herokuapp.com/)
+## [Front-end Github Repository link](https://github.com/GUNDAANUTEJ/studybuddyfrontend)
+
+## [Front-end Heroku deployment link](https://study-buddy-frontend.herokuapp.com/)
+
+## [Back-end Heroku deployment link](https://study-buddy-bckend.herokuapp.com/)
 
 ## how to run tests
 

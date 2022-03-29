@@ -26,30 +26,50 @@ app.use(
 const uri = "mongodb+srv://Denis:denis123@cluster0.iaxba.mongodb.net/study_buddy?retryWrites=true&w=majority";
 
 mongoose.connect(uri).then(() => {
-    console.log("connection successfull...")
+    console.log("connection successfull...!")
 }).catch((err) => console.log("connection error : ", err))
 
-app.get('/auth', async (req, res) => {
-    if (typeof (req.cookies.jwtToken) !== "undefined") {
-        const cookie = req.cookies.jwtToken;
-        const verifyToken = jwt.verify(cookie, "BearcatStudyBuddyProject")
-        const verifyUser = await collection.findOne({ _id: verifyToken._id, token: cookie })
-        if (!verifyUser)
+app.post('/auth', async (req, res) => {
+    if (req.body.token) {
+        const token = req.body.token;
+        const verifyToken = jwt.verify(token, "BearcatStudyBuddyProject")
+        console.log(verifyToken);
+        const verifyUser = await collection.findOne({ _id: verifyToken._id })
+        if (verifyUser) {
+            res.json({ success: 1, user: verifyUser })
+        }
+        else {
             res.json({ success: 0 })
-        else
-            res.json({ success: 1 })
-
+        }
     } else {
         res.json({ success: 0 })
     }
 })
 
-app.get('/fetchData', Authentication, async (req, res) => {
+app.post('/getToken', async (req, res) => {
     try {
-        const user = req.user;
-        const result = await course.findOne({ email: user.email })
+        let email = req.body.email;
+        let result = await collection.findOne({ email: email });
         if (result) {
-            const fileName = './' + result.path;
+            // we are genrating token
+            token = jwt.sign({ _id: result._id, email: result.email }, "BearcatStudyBuddyProject");
+            res.json({ success: 1, token: token })
+        }
+        else {
+            res.json({ success: 0, error: "email is wrong" })
+        }
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+app.post('/fetchData', async (req, res) => {
+    try {
+        const token = req.body.token;
+        const verifyToken = jwt.verify(token, "BearcatStudyBuddyProject");
+        const result = await course.findOne({ email: verifyToken.email })
+        if (result) {
+            const fileName = result.path;
             const Data = await fs.readFileSync(fileName, "utf-8")
             res.send(Data)
         } else {
@@ -60,34 +80,23 @@ app.get('/fetchData', Authentication, async (req, res) => {
     }
 })
 
-app.get('/dashboard', Authentication, async (req, res) => {
-    try {
-        const user = req.user;
-        res.send(true)
-    } catch (err) {
-        console.log(err)
-    }
-})
-
 app.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         const result = await collection.findOne({ email: email })
-        const result1 = await bcrypt.compare(password, result.password)
-        if (result1) {
+        if (result) {
+            const result1 = await bcrypt.compare(password, result.password)
+            if (result1) {
 
-            // we are genrating token
-            token = jwt.sign({ _id: result._id }, "BearcatStudyBuddyProject");
-            result.token = token;
-            await result.save();
+                // we are genrating token
+                token = jwt.sign({ _id: result._id, email: result.email }, "BearcatStudyBuddyProject");
+                res.json({ success: 1, token: token })
 
-            res.cookie("jwtToken", token, {
-                expires: new Date(Date.now() + 172800000),
-                httpOnly: true
-            })
-
-            res.json({ success: 1 })
-        } else {
+            } else {
+                res.json({ success: 0, error: "password or username is wrong" })
+            }
+        }
+        else {
             res.json({ success: 0, error: "password or username is wrong" })
         }
     } catch (err) {
@@ -113,19 +122,14 @@ app.post('/signup', async (req, res) => {
             bod,
             password: hashPassword
         });
-        await result.save().then(async () => {
-
-            token = jwt.sign({ _id: result._id }, "BearcatStudyBuddyProject");
-            result.token = token;
-            await result.save();
-
-            res.cookie("jwtToken", token, {
-                expires: new Date(Date.now() + 900000),
-                httpOnly: true
-            })
-
-            res.json({ success: 1 })
-        }).catch((err) => res.json({ success: 0, error: "Unsuccessfully registered" }))
+        await result.save()
+            .then(() => {
+                console.log(result.email);
+                const token = jwt.sign({ _id: result._id, email: result.email }, "BearcatStudyBuddyProject");
+                // result.token = token;
+                // await result.save();
+                res.json({ success: 1, token: token });
+            }).catch((err) => res.json({ success: 0, error: "Unsuccessfully registered" }))
     } catch (err) {
         res.status(400).send(err);
     }
@@ -145,23 +149,24 @@ const upload = multer({ storage: fileStorageEngine })
 app.post("/course", upload.single("file"), async (req, res) => {
     try {
         console.log(req.file)
-        const cookie = req.cookies.jwtToken;
-        const verifyToken = jwt.verify(cookie, "BearcatStudyBuddyProject")
-        const verifyUser = await collection.findOne({ _id: verifyToken._id, token: cookie })
+        const token = req.body.token;
+        const verifyToken = jwt.verify(token, "BearcatStudyBuddyProject")
+        const verifyUser = await collection.findOne({ _id: verifyToken._id })
         const filePath = './storage/' + req.file.filename;
-        const email = verifyUser.email
-        const checkUser = await course.findOne({ email: email })
+        console.log(filePath);
+        const checkUser = await course.findOne({ email: verifyUser.email })
         if (checkUser) {
-            const result = await course.findOneAndUpdate({ email: email }, { path: filePath })
-            await result.save()
-        } else {
-            const result = new course({ email: email, path: filePath })
+            const result = await course.findOneAndUpdate({ email: verifyUser.email }, { path: filePath })
             await result.save()
         }
-        res.send(true)
+        else {
+            const result = new course({ email: verifyUser.email, path: filePath })
+            await result.save()
+        }
+        res.send({ success: 1 })
     } catch (err) {
         res.send({ success: 0, error: 'Database Error' })
     }
 })
 
-app.listen(3300, console.log("server is ready to run on 3300..."))
+app.listen(process.env.PORT || 3300, console.log("server is ready to run..."))
