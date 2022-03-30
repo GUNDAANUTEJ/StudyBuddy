@@ -73,7 +73,7 @@ app.post('/loginWithGithub', async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-})
+});
 
 app.post('/fetchData', async (req, res) => {
     try {
