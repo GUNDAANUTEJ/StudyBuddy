@@ -1,35 +1,35 @@
 [{
     "img":"https://picsum.photos/200",
-    "prof":"Prof Jasvant R Dave",
-    "subject":"IPDC"
+    "prof":"Dr Denise Case",
+    "subject":"Project Management"
 },
 {
     "img":"https://picsum.photos/200",
-    "prof":"Prof Chirag A Patel",
-    "subject":"Adv. Web devlopment"
+    "prof":"Dr Chirag A Patel",
+    "subject":"Web Applications"
 },
 {
     "img":"https://picsum.photos/200",
-    "prof":"Prof Shailesh J Molia",
-    "subject":"DBMS"
+    "prof":"Dr Shailesh J Molia",
+    "subject":"Android"
 },
 {
     "img":"https://picsum.photos/200",
-    "prof":"Prof Dhaval J Varia",
-    "subject":"Mobile Application Devlopement"
+    "prof":"Dr Dhaval J Varia",
+    "subject":"IOS"
 },
 {
     "img":"https://picsum.photos/200",
-    "prof":"Prof Chetna G Chand",
-    "subject":"Computer Oragnization & Architecture"
+    "prof":"Dr Chetna G Chand",
+    "subject":"Data Visualization"
 },
 {
     "img":"https://picsum.photos/200",
-    "prof":"Prof Nikunj c Gamit",
-    "subject":"IC"
+    "prof":"Dr Nikunj c Gamit",
+    "subject":"GDP"
 },
 {
     "img":"https://picsum.photos/200",
-    "prof":"Prof Vibha D Patel",
-    "subject":"Data Science"
+    "prof":"Dr Vibha D Patel",
+    "subject":"Application Design Patterns"
 }]
