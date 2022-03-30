@@ -46,22 +46,34 @@ app.post('/auth', async (req, res) => {
     }
 })
 
-app.post('/getToken', async (req, res) => {
+app.post('/loginWithGithub', async (req, res) => {
     try {
         let email = req.body.email;
-        let result = await collection.findOne({ email: email });
-        if (result) {
-            // we are genrating token
-            token = jwt.sign({ _id: result._id, email: result.email }, "BearcatStudyBuddyProject");
-            res.json({ success: 1, token: token })
-        }
-        else {
-            res.json({ success: 0, error: "email is wrong" })
+        const user = await collection.findOne({ email: email });
+        if (user) {
+            token = jwt.sign({ _id: user._id, email: user.email }, "BearcatStudyBuddyProject");
+            res.json({ success: 1, token: token });
+        } else {
+
+            let name = req.body.name;
+            let password = await bcrypt.hash(email + name, 10);
+            const result = new collection({
+                email: email,
+                name: name,
+                password: password
+            });
+            await result.save()
+                .then(() => {
+                    token = jwt.sign({ _id: result._id, email: result.email }, "BearcatStudyBuddyProject");
+                    res.json({ success: 1, token: token });
+                }).catch((err) => {
+                    res.json({ success: 0, error: "Login error!!!" });
+                });
         }
     } catch (error) {
         console.log(error);
     }
-})
+});
 
 app.post('/fetchData', async (req, res) => {
     try {
