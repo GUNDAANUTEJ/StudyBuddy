@@ -6,7 +6,8 @@
 ### [CodeQL link](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 
 ### Snyk:  
-![Screenshot (256)](https://user-images.githubusercontent.com/77635770/156493541-696c21b5-c960-4437-994e-cec98a4d5ec9.png)
+[Snyk](https://app.snyk.io/org/gundaanutej)
+![Screenshot (204)](https://user-images.githubusercontent.com/77635770/161365918-cc359ac3-0994-4b6d-99cf-e966ae7e6e18.png)
 
 ### Back-end github code, in this repository.
 
