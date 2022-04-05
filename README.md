@@ -38,6 +38,10 @@ Stack we are using for application building.
 
 ## [Back-end Heroku deployment link](https://study-buddy-bckend.herokuapp.com/)
 
+## [Proposal](https://github.com/Maruthi158/691-01-F21-DevRFP-Group5/blob/main/Proposal.md)
+
+## [RFP](https://github.com/Maruthi158/691-01-F21-RFP-Group2/blob/main/rfp-study.md)
+
 ## how to run tests
 
 * Created tests folder and added example-tests.js file.
