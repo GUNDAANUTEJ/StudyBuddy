@@ -76,3 +76,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+### To run Front-end and back-end in local repository
+* Front-end : "npm start" command
+* Back-end : "nodemon app.js" command
+
