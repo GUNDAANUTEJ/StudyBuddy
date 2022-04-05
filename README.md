@@ -5,8 +5,7 @@
 ### [![CodeQL](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 ### [CodeQL link](https://github.com/GUNDAANUTEJ/StudyBuddy/actions/workflows/codeql-analysis.yml)
 
-### Snyk:  
-#### [Snyk Link](https://app.snyk.io/org/gundaanutej)
+### [Snyk Link](https://app.snyk.io/org/gundaanutej)
 ![Screenshot (204)](https://user-images.githubusercontent.com/77635770/161365918-cc359ac3-0994-4b6d-99cf-e966ae7e6e18.png)
 
 ### Back-end github code, in this repository.
@@ -24,7 +23,7 @@
 ## External Requirments
 
 Stack we are using for application building.
-* Backend language + framework - The backend language and framework for this project would be JavaScript / Node.js
+* Backend language + framework - The backend language and framework for this project is JavaScript / Node.js
 * Backend app host - Heroku
 * Data host + type - Atlas MongoDB
 * Front-end design - React.js.
