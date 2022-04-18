@@ -23,7 +23,7 @@ app.use(
     })
 );
 
-const uri = "mongodb+srv://Denis:denis123@cluster0.iaxba.mongodb.net/study_buddy?retryWrites=true&w=majority";
+const uri = "mongodb+srv://AnuTej:<password>@cluster0.9i5i7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(uri).then(() => {
     console.log("connection successfull...!")
